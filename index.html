@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <!-- Thẻ meta cơ bản -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Tiêu đề trang -->
+    <title>Dawn Music</title>
+
+    <!-- Liên kết file CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- File CSS chính -->
+    <!-- Font Awesome cho icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- Container chính của trình phát nhạc -->
+    <div class="music-container" id="music-container">
+      <!-- Phần header với tên trình phát -->
+      <div class="music-header">
+        <h1>Dawn Music</h1>
+      </div>
+
+      <!-- Khung chứa ảnh bìa album -->
+      <div class="img-container">
+        <!-- Ảnh bìa mặc định (sẽ thay đổi theo bài hát) -->
+        <img src="images/default.jpg" alt="Song_Image" id="cover" />
+      </div>
+
+      <!-- Phần thông tin bài hát -->
+      <div class="music-info">
+        <!-- Tên bài hát hiện tại -->
+        <h4 id="title">None Song</h4>
+
+        <!-- Thanh tiến trình -->
+        <div class="progress-container" id="progress-container">
+          <!-- Thanh tiến trình sẽ chạy khi phát nhạc -->
+          <div class="progress" id="progress"></div>
+        </div>
+
+        <!-- Hiển thị thời gian -->
+        <div class="time-container">
+          <span id="current-time">00:00</span>
+          <!-- Thời gian hiện tại -->
+          <span id="duration">00:00</span>
+          <!-- Tổng thời gian bài hát -->
+        </div>
+      </div>
+
+      <!-- Thẻ audio (ẩn, xử lý phát nhạc) -->
+      <audio src="" id="audio"></audio>
+
+      <!-- Các nút điều khiển -->
+      <div class="navigation">
+        <!-- Nút bài trước -->
+        <button id="prev" class="action-btn" title="Prev">
+          <i class="fas fa-backward"></i>
+        </button>
+
+        <!-- Nút Play/Pause (chính) -->
+        <button id="play" class="action-btn action-btn-big" title="Play/Pause">
+          <i class="fas fa-play"></i>
+        </button>
+
+        <!-- Nút bài tiếp theo -->
+        <button id="next" class="action-btn" title="Next">
+          <i class="fas fa-forward"></i>
+        </button>
+      </div>
+
+      <!-- Phần chỉnh âm lượng -->
+      <div class="volume-control">
+        <!-- Icon âm lượng thấp -->
+        <i class="fas fa-volume-down"></i>
+        <!-- Thanh điều chỉnh âm lượng -->
+        <input
+          type="range"
+          id="volume"
+          min="0"
+          max="1"
+          step="0.01"
+          value="0.7"
+        />
+        <!-- Icon âm lượng cao -->
+        <i class="fas fa-volume-up"></i>
+      </div>
+
+      <!-- Danh sách phát -->
+      <div class="playlist-container">
+        <h3>Playlist</h3>
+        <!-- Danh sách bài hát (sẽ được thêm bằng JavaScript) -->
+        <ul id="playlist"></ul>
+      </div>
+    </div>
+
+    <!-- File JavaScript chính -->
+    <script src="script.js"></script>
+  </body>
+</html>
